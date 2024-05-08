@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>Noma Dream Home</div>
+  return <div style={{ color: 'red', fontSize: '24px' }}>Noma Dream Home</div>
 }
