@@ -1,16 +1,30 @@
-import { formStyles } from './styles/styles'
+import './styles/styles.scss'
 
-import { FormType } from '../types/formType'
+type LoginProps = {
+  setHasAccount: (value: boolean) => void
+}
 
-export default function Login() {
+export default function Login({ setHasAccount }: LoginProps) {
   return (
     <>
-      <formStyles action="submit">
-        <label htmlFor="username">Username</label>
+      <form className="loginForm" action="submit">
+        <label className="label" htmlFor="username">
+          Username
+        </label>
         <input type="text" id="username" name="username" />
-        <label htmlFor="password">Password</label>
+        <label className="label" htmlFor="password">
+          Password
+        </label>
         <input type="password" id="password" name="password" />
-      </formStyles>
+        <button className="loginbtn" type="submit">
+          Login
+        </button>
+      </form>
+      <p>Forgot your password?</p>
+      <p>Don't have an account?</p>
+      <button className="loginbtn" onClick={() => setHasAccount(false)}>
+        Register
+      </button>
     </>
   )
 }
